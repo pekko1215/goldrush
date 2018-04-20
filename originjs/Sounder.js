@@ -87,7 +87,7 @@ Sounder.prototype.playSound = function (tag, loop, callback, loopstart, loopend)
         loop = false;
     }
     if (!this.firstLoad) {
-        console.log("loadFile ga zikkou sarete naiyo")
+//        console.log("loadFile ga zikkou sarete naiyo")
     }
     var arr = this.soundFilesObj.loaded.filter(function (f) {
         return f.tag.indexOf(tag)!=-1;

@@ -41,3 +41,20 @@ SegmentControler.prototype.reset = function(){
         v.draw(0);
     })
 }
+
+SegmentControler.prototype.randomSeg = function(){
+        return this.segments.map((seg)=>{
+            return (function*(){
+                var index = 0;
+                var chips = ["a","b","c","d","e","g","c","d","e","f","a","b","g","f"];
+                while(true){
+                    var obj = {};
+                    obj[chips[index++]] = 1;
+                    seg.draw(obj)
+                    index==chips.length&&(index=0)
+                    yield index;
+                }
+            })()
+        })
+
+}
